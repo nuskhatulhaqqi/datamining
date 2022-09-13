@@ -1,0 +1,94 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 664, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib.colors import ListedColormap
+from sklearn import neighbors, datasets
+from sklearn.inspection import DecisionBoundaryDisplay
+
+n_neighbors = 15
+
+# import some data to play with
+iris = datasets.load_iris()
+
+# we only take the first two features. We could avoid this ugly
+# slicing by using a two-dim dataset
+X = iris.data[:, :2]
+y = iris.target
+
+# Create color maps
+cmap_light = ListedColormap(["orange", "cyan", "cornflowerblue"])
+cmap_bold = ["darkorange", "c", "darkblue"]
+
+for weights in ["uniform", "distance"]:
+    # we create an instance of Neighbours Classifier and fit the data.
+    clf = neighbors.KNeighborsClassifier(n_neighbors, weights=weights)
+    clf.fit(X, y)
+
+    _, ax = plt.subplots()
+    DecisionBoundaryDisplay.from_estimator(
+        clf,
+        X,
+        cmap=cmap_light,
+        ax=ax,
+        response_method="predict",
+        plot_method="pcolormesh",
+        xlabel=iris.feature_names[0],
+        ylabel=iris.feature_names[1],
+        shading="auto",
+    )
+
+    # Plot also the training points
+    sns.scatterplot(
+        x=X[:, 0],
+        y=X[:, 1],
+        hue=iris.target_names[y],
+        palette=cmap_bold,
+        alpha=1.0,
+        edgecolor="black",
+    )
+    plt.title(
+        "3-Class classification (k = %i, weights = '%s')" % (n_neighbors, weights)
+    )
+
+plt.show()
+------------------
+
+[0;31m[0m
+[0;31mImportError[0mTraceback (most recent call last)
+[0;32m<ipython-input-2-b7bfb44996ad>[0m in [0;36m<module>[0;34m[0m
+[1;32m      3[0m [0;32mfrom[0m [0mmatplotlib[0m[0;34m.[0m[0mcolors[0m [0;32mimport[0m [0mListedColormap[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;32mfrom[0m [0msklearn[0m [0;32mimport[0m [0mneighbors[0m[0;34m,[0m [0mdatasets[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 5[0;31m [0;32mfrom[0m [0msklearn[0m[0;34m.[0m[0minspection[0m [0;32mimport[0m [0mDecisionBoundaryDisplay[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      6[0m [0;34m[0m[0m
+[1;32m      7[0m [0mn_neighbors[0m [0;34m=[0m [0;36m15[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mImportError[0m: cannot import name 'DecisionBoundaryDisplay' from 'sklearn.inspection' (/usr/local/lib/python3.7/dist-packages/sklearn/inspection/__init__.py)
+
+[0;31m---------------------------------------------------------------------------[0;32m
+NOTE: If your import is failing due to a missing package, you can
+manually install dependencies using either !pip or !apt.
+
+To view examples of installing some common dependencies, click the
+"Open Examples" button below.
+[0;31m---------------------------------------------------------------------------[0m
+
+ImportError: cannot import name 'DecisionBoundaryDisplay' from 'sklearn.inspection' (/usr/local/lib/python3.7/dist-packages/sklearn/inspection/__init__.py)
+

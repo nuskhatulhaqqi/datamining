@@ -1,0 +1,67 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 664, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+data_join_new = data_fix.join(data_risk_rating)
+data_join_new
+------------------
+
+[0;31m[0m
+[0;31mValueError[0mTraceback (most recent call last)
+[0;32m<ipython-input-7-d2259fad6208>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mdata_join_new[0m [0;34m=[0m [0mdata_fix[0m[0;34m.[0m[0mjoin[0m[0;34m([0m[0mdata_risk_rating[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0mdata_join_new[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py[0m in [0;36mjoin[0;34m(self, other, on, how, lsuffix, rsuffix, sort)[0m
+[1;32m   9098[0m         """
+[1;32m   9099[0m         return self._join_compat(
+[0;32m-> 9100[0;31m             [0mother[0m[0;34m,[0m [0mon[0m[0;34m=[0m[0mon[0m[0;34m,[0m [0mhow[0m[0;34m=[0m[0mhow[0m[0;34m,[0m [0mlsuffix[0m[0;34m=[0m[0mlsuffix[0m[0;34m,[0m [0mrsuffix[0m[0;34m=[0m[0mrsuffix[0m[0;34m,[0m [0msort[0m[0;34m=[0m[0msort[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   9101[0m         )
+[1;32m   9102[0m [0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/frame.py[0m in [0;36m_join_compat[0;34m(self, other, on, how, lsuffix, rsuffix, sort)[0m
+[1;32m   9136[0m                 [0mright_index[0m[0;34m=[0m[0;32mTrue[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   9137[0m                 [0msuffixes[0m[0;34m=[0m[0;34m([0m[0mlsuffix[0m[0;34m,[0m [0mrsuffix[0m[0;34m)[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 9138[0;31m                 [0msort[0m[0;34m=[0m[0msort[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   9139[0m             )
+[1;32m   9140[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/reshape/merge.py[0m in [0;36mmerge[0;34m(left, right, how, on, left_on, right_on, left_index, right_index, sort, suffixes, copy, indicator, validate)[0m
+[1;32m    119[0m         [0mvalidate[0m[0;34m=[0m[0mvalidate[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    120[0m     )
+[0;32m--> 121[0;31m     [0;32mreturn[0m [0mop[0m[0;34m.[0m[0mget_result[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    122[0m [0;34m[0m[0m
+[1;32m    123[0m [0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/reshape/merge.py[0m in [0;36mget_result[0;34m(self)[0m
+[1;32m    716[0m [0;34m[0m[0m
+[1;32m    717[0m         llabels, rlabels = _items_overlap_with_suffix(
+[0;32m--> 718[0;31m             [0mself[0m[0;34m.[0m[0mleft[0m[0;34m.[0m[0m_info_axis[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mright[0m[0;34m.[0m[0m_info_axis[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0msuffixes[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    719[0m         )
+[1;32m    720[0m [0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.7/dist-packages/pandas/core/reshape/merge.py[0m in [0;36m_items_overlap_with_suffix[0;34m(left, right, suffixes)[0m
+[1;32m   2312[0m [0;34m[0m[0m
+[1;32m   2313[0m     [0;32mif[0m [0;32mnot[0m [0mlsuffix[0m [0;32mand[0m [0;32mnot[0m [0mrsuffix[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 2314[0;31m         [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34mf"columns overlap but no suffix specified: {to_rename}"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   2315[0m [0;34m[0m[0m
+[1;32m   2316[0m     [0;32mdef[0m [0mrenamer[0m[0;34m([0m[0mx[0m[0;34m,[0m [0msuffix[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mValueError[0m: columns overlap but no suffix specified: Index(['risk_rating'], dtype='object')
+ValueError: columns overlap but no suffix specified: Index(['risk_rating'], dtype='object')
+

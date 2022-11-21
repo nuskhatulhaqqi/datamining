@@ -1,0 +1,48 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 664, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+
+
+clf = RandomForestClassifier(n_estimators=50)
+clf.fit(X_train, y_train)
+
+cm = confusion_matrix(y_test, Y_pred)
+accuracy = accuracy_score(y_test,Y_pred)
+precision =precision_score(y_test, Y_pred,average='micro')
+recall =  recall_score(y_test, Y_pred,average='micro')
+f1 = f1_score(y_test,Y_pred,average='micro')
+print('Confusion matrix for randomForest\n',cm)
+print('accuracy_randomForest: %.3f' %accuracy)
+print('precision_randomForest: %.3f' %precision)
+print('recall_randomForest: %.3f' %recall)
+print('f1-score_randomForest : %.3f' %f1)
+------------------
+
+[0;31m[0m
+[0;31mNameError[0mTraceback (most recent call last)
+[0;32m<ipython-input-17-caa9837481af>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mclf[0m [0;34m=[0m [0mRandomForestClassifier[0m[0;34m([0m[0mn_estimators[0m[0;34m=[0m[0;36m50[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0mclf[0m[0;34m.[0m[0mfit[0m[0;34m([0m[0mX_train[0m[0;34m,[0m [0my_train[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;34m[0m[0m
+[1;32m      4[0m [0mcm[0m [0;34m=[0m [0mconfusion_matrix[0m[0;34m([0m[0my_test[0m[0;34m,[0m [0mY_pred[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0maccuracy[0m [0;34m=[0m [0maccuracy_score[0m[0;34m([0m[0my_test[0m[0;34m,[0m[0mY_pred[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNameError[0m: name 'RandomForestClassifier' is not defined
+NameError: name 'RandomForestClassifier' is not defined
+

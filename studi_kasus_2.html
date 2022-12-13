@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Best Accuracy Between Normalization vs Unnomarlization (Tugas 9) &#8212; Nuskhatul Haqqi 200411100034</title>
+    <title>Best Accuracy Between Normalization vs Unnomarlization (Tugas 8) &#8212; Nuskhatul Haqqi 200411100034</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Ensemble RANDOM FOREST" href="random_forest.html" />
-    <link rel="prev" title="KASUS PINJAMAN BANK" href="studi_kasus.html" />
+    <link rel="next" title="Ensemble RANDOM FOREST(TUGAS 9)" href="random_forest.html" />
+    <link rel="prev" title="KASUS PINJAMAN BANK (TUGAS 7)" href="studi_kasus.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -156,17 +156,22 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="studi_kasus.html">
-   KASUS PINJAMAN BANK
+   KASUS PINJAMAN BANK (TUGAS 7)
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Best Accuracy Between Normalization vs Unnomarlization (Tugas 9)
+   Best Accuracy Between Normalization vs Unnomarlization (Tugas 8)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="random_forest.html">
-   Ensemble RANDOM FOREST
+   Ensemble RANDOM FOREST(TUGAS 9)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ensemble.html">
+   Tugas 10 (Ensemble Stacking)
   </a>
  </li>
 </ul>
@@ -395,7 +400,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Best Accuracy Between Normalization vs Unnomarlization (Tugas 9)
+   Best Accuracy Between Normalization vs Unnomarlization (Tugas 8)
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -451,7 +456,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Best Accuracy Between Normalization vs Unnomarlization (Tugas 9)</h1>
+                <h1>Best Accuracy Between Normalization vs Unnomarlization (Tugas 8)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -463,7 +468,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Best Accuracy Between Normalization vs Unnomarlization (Tugas 9)
+   Best Accuracy Between Normalization vs Unnomarlization (Tugas 8)
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -520,8 +525,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="best-accuracy-between-normalization-vs-unnomarlization-tugas-9">
-<h1>Best Accuracy Between Normalization vs Unnomarlization (Tugas 9)<a class="headerlink" href="#best-accuracy-between-normalization-vs-unnomarlization-tugas-9" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="best-accuracy-between-normalization-vs-unnomarlization-tugas-8">
+<h1>Best Accuracy Between Normalization vs Unnomarlization (Tugas 8)<a class="headerlink" href="#best-accuracy-between-normalization-vs-unnomarlization-tugas-8" title="Permalink to this headline">#</a></h1>
 <ol class="simple">
 <li><p>Baca data Diabetic Retinopathy Debrecen Data Set</p></li>
 <li><p>Buat data tes &amp; data latih</p></li>
@@ -614,7 +619,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-48ce2bd1-13b3-4b87-981f-b5c2cd46a4ff">
+  <div id="df-883b5bae-94a2-4c81-8b1a-b4bfac1cbe7b">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -914,7 +919,7 @@ title="Print to PDF"
 </table>
 <p>1151 rows × 20 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-48ce2bd1-13b3-4b87-981f-b5c2cd46a4ff')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-883b5bae-94a2-4c81-8b1a-b4bfac1cbe7b')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -965,12 +970,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-48ce2bd1-13b3-4b87-981f-b5c2cd46a4ff button.colab-df-convert');
+          document.querySelector('#df-883b5bae-94a2-4c81-8b1a-b4bfac1cbe7b button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-48ce2bd1-13b3-4b87-981f-b5c2cd46a4ff');
+          const element = document.querySelector('#df-883b5bae-94a2-4c81-8b1a-b4bfac1cbe7b');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1025,7 +1030,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-83a5ae0e-9c4c-433f-9f2e-3c56f81bad3e">
+  <div id="df-7a3c9490-98e4-4e77-bdf8-6144f5be672a">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1186,7 +1191,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-83a5ae0e-9c4c-433f-9f2e-3c56f81bad3e')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-7a3c9490-98e4-4e77-bdf8-6144f5be672a')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1237,12 +1242,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-83a5ae0e-9c4c-433f-9f2e-3c56f81bad3e button.colab-df-convert');
+          document.querySelector('#df-7a3c9490-98e4-4e77-bdf8-6144f5be672a button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-83a5ae0e-9c4c-433f-9f2e-3c56f81bad3e');
+          const element = document.querySelector('#df-7a3c9490-98e4-4e77-bdf8-6144f5be672a');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1835,7 +1840,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5844155844155844
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5800865800865801
 </pre></div>
 </div>
 </div>
@@ -1859,7 +1864,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5800865800865801
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5627705627705628
 </pre></div>
 </div>
 </div>
@@ -1898,13 +1903,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">KASUS PINJAMAN BANK</p>
+            <p class="prev-next-title">KASUS PINJAMAN BANK (TUGAS 7)</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="random_forest.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ensemble RANDOM FOREST</p>
+        <p class="prev-next-title">Ensemble RANDOM FOREST(TUGAS 9)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
